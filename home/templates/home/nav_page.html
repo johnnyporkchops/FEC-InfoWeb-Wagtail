@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block body_class %}template-nav{% endblock %}
+
+{% block content %}
+
+ <div class="row" id="menu" >
+   <div class="twelve columns" >
+    <div id="nav">
+      <ul class="breadcrumbs"></ul>
+      <p>---------- On this page ----------</p>
+       <ul class="nav-bar">
+        <li><a href="#key">Key Points</a></li>
+        <li><a href="#FAQs">FAQs</a></li>
+        <li><a href="#statute">Statute</a></li>
+        <li><a href="#regulations">Regulations</a></li>
+        <li><a href="#AOs">AOs</a></li>
+        <li><a href="#regulatory">Regulatory History</a></li>
+        <li><a href="#record">Record</a></li>
+        <li><a href="#court_cases">Court Cases</a></li>
+        <li><a href="#MURs">MURs</a></li>
+        <li><a href="#other">Other</a></li>
+       </ul>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+  <div class="twelve columns panel">
+    <h1 class="center template">{{ self.nav_title|richtext }}</h1>
+     {{ self.date}}
+     {{ self.body }}
+  </div>
+</div><!-- end row -->
+
+{% endblock %}

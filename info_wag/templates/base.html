@@ -1,0 +1,239 @@
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]--><head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        
+    <link rel="stylesheet" type="text/css" href="{% static 'css/skeleton.css' %}">
+
+        {% block extra_css %}
+         {# Override this in templates to add extra stylesheets #}
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery_ui/jquery-ui.css' %}">
+        {% endblock %}
+         <script  src="{% static 'js/jquery.js' %}"></script>
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+<div class="container">      
+<div class="row banner">
+  <div class="two columns">
+   <a href="http://www.fec.gov"><img src="{% static "images/fec-seal.png" %}" alt="Seal of the Federal Election Commission | United States of America" id="seal"/></a>
+ </div>
+ <div class="ten columns"> 
+  <!--#config timefmt="%B %e, %Y - %I:%M%p" -->
+   <span class="lastmod"><!--#echo var="LAST_MODIFIED" --></span>
+   
+  <h1><a href="/index.html" alt="Info Web banner">InfoWeb</a></h1>
+  <h4>FEC Knowledge Management Resource<span>For Internal Use Only</span></h4>
+  
+  <form action="/search.html" class="form-wrapper">
+    <label for "search"></label>
+    <input type="text" name="q" size="20" id="tipue_search_input" list="search" autocomplete="off" placeholder=" Search" class="input-grow" required>
+    
+    <input type="image" <img src="{% static "images/search_icon.png" %}" border="0" alt="Submit">
+  </form action>
+  <datalist id="search">
+    <option value="Administrative Fines">Administrative Fines</option>
+    <option value="Advisory Opinions">Advisory Opinions</option>
+    <option value="Affiliation">Affiliation</option>
+    <option value="Allocation">Allocation</option>
+    <option value="Audits">Audits</option>
+    <option value="Campaign Funds">Campaign Funds</option>
+    <option value="Candidates, Federal ">Candidates, Federal </option>
+    <option value="Carey Accounts/Non-Contribution Accounts/Hybrid PACs">Carey Accounts/Non-Contribution Accounts/Hybrid PACs</option>
+    <option value="Citizens United">Citizens United</option>
+    <option value="Commercial Transactions">Commercial Transactions</option>
+    <option value="Commission">Commission</option>
+    <option value="Communications ">Communications</option>
+    <option value="Contributions ">Contributions</option>
+    <option value="Cooperatives">Cooperatives</option>
+    <option value="Coordinated Party Expenditures">Coordinated Party Expenditures</option>
+    <option value="Corporations">Corporations</option>
+    <option value="Court Cases ">Court Cases</option>
+    <option value="Data">Data</option>
+    <option value="Debates">Debates</option> 
+    <option value="Delegates">Delegates</option>
+    <option value="Disclaimers">Disclaimers</option>
+    <option value="Electioneering Communications">Electioneering Communications</option>
+    <option value="Electronic Filing">Electronic Filing</option>
+    <option value="Enforcement">Enforcement</option>
+    <option value="Expenditures ">Expenditures</option>
+    <option value="Express Advocacy ">Express Advocacy</option>
+    <option value="Federal Contractor">Federal Contractor</option>
+    <option value="Federal Election Activity">Federal Election Activity</option>
+    <option value="Foreign Nationals">Foreign Nationals</option>
+    <option value="Forms">Forms</option>
+    <option value="Fundraising ">Fundraising</option>
+    <option value="GOTV">GOTV</option>
+    <option value="Independent Expenditures">Independent Expenditures</option>
+    <option value="Inflation Adjustments">Inflation Adjustments</option>
+    <option value="Informational Articles">Informational Articles</option>
+    <option value="Interpretive Rules">Interpretive Rules</option>
+    <option value="Joint Fundraising">Joint Fundraising</option>
+    <option value="Labor Organizations">Labor Organizations</option>
+    <option value="Leadership PACs ">Leadership PACs </option>
+    <option value="Legal Defense Fund/Legal Expenses ">Legal Defense Fund/Legal Expenses</option>
+    <option value="Legislation">Legislation</option>
+    <option value="Limited Liability Companies (LLCs) ">Limited Liability Companies (LLCs)</option>
+    <option value="Lobbyist Bundling">Lobbyist Bundling</option>
+    <option value="Membership Organizations ">Membership Organizations</option>
+    <option value="Multicandidate Committees">Multicandidate Committees</option>
+    <option value="Nonconnected Committees">Nonconnected Committees</option>
+    <option value="Non-Filer Publications">Non-Filer Publications</option>
+    <option value="Nonfederal Funds">Nonfederal Funds</option>
+    <option value="Partnerships">Partnerships</option>
+    <option value="Party Committees">Party Committees</option>
+    <option value="Political Committees">Political Committees</option>
+    <option value="Preemption">Preemption</option>
+    <option value="Presidential Elections">Presidential Elections</option>
+    <option value="Press Exemption ">Press Exemption </option>
+    <option value="Public Records Office">Public Records Office</option>
+    <option value="Public Funding">Public Funding</option>
+    <option value="Publications">Publications</option>
+    <option value="Recordkeeping">Recordkeeping</option>
+    <option value="Regulations">Regulations</option>
+    <option value="Reporting">Reporting</option>
+    <option value="Reports Analysis Division">Reports Analysis Division</option>
+    <option value="Rulemaking">Rulemaking</option>
+    <option value="Sale or Use Restriction">Sale or Use Restriction</option>
+    <option value="Separate Segregated Fund (SSF) ">Separate Segregated Fund (SSF)</option>
+    <option value="Solicitations">Solicitations</option>
+    <option value="Special Elections">Special Elections</option>
+    <option value="State Elections">State Elections</option>
+    <option value="Statistics">Statistics</option>
+    <option value="Super PACs">Super PACs</option>
+    <option value="Technology, Use of">Technology, Use of</option>
+    <option value="Trade Associations">Trade Associations</option>
+    <option value="Training, Workshops and Conferences">Training, Workshops and Conferences</option>
+    <option value="Volunteer Activities and Exemptions">Volunteer Activities and Exemptions</option>
+    <option value="Voter Registration">Voter Registration</option>
+  </datalist>
+  
+
+</div>
+</div>
+
+<div class="row">
+  
+  <a id="report" href="">Report an Issue</a>
+  <a id="email_this" href="">Share with FEC staff</a>
+  <!--email form dialog -->
+  <div id="email_dialog" style="display:none">
+    <form id="emfrm" method="post" enctype="multipart/form-data" action="">
+      <label for "share_with">Share With*:</label>
+      <p>*This content can only be shared with fec.gov email addresses</p>
+      <input name="share_with" value="" style="text-align:right" ><span>@fec.gov</span>
+      <label for "share_sender">Your Email</label>
+      <input name="share_sender" value="" style="text-align:right" ><span>@fec.gov</span>
+      <label for "page">Page</label>
+      <textarea rows="4" cols="50" style="width:90%" name="page" value="" ></textarea>
+      <label for "message">Message:</label>
+      <textarea rows="4" cols="50" style="width:90%" name="message" value="">Sharing this page with you</textarea>
+      <label for "url">Link:</label>
+      <textarea rows="4" cols="50" style="width:90%" name="url" value="" readonly></textarea>
+      <br />
+      <input type ="submit"  value ="Share">
+    </form>
+    <div id="success_dialog_shr" style="display:none"></div>
+  </div>
+  <!--report form dialog -->
+  <div id="report_dialog" style="display:none">
+    <form id="report_frm" method="post" enctype="multipart/form-data" action="">
+     <label for "sender">Your Email</label>
+     <input name="sender" value="" style="text-align:right" ><span>@fec.gov</span>
+     <label>Issue:</label>
+     
+     <select name="issue">
+      <option value="" disabled selected>Select an Issue </option>       
+      <option> broken link</option>
+      <option> outdated information</option>
+      <option> broken functionality</option>
+      <option> other</option>       
+    </select>    
+    <label for "issue_desc">Describe Issue:</label>
+    <textarea rows="4" cols="50" style="width:90%" name="issue_desc" value=""></textarea>
+    
+    <label for "subject">Page:</label>
+    <textarea rows="4" cols="50" style="width:90%" name="subject" value="" ></textarea>
+    
+    <label for "url">URL:</label>
+    <textarea rows="4" cols="50" style="width:90%" name="url" value=""></textarea>
+    <br />
+    <input type ="submit"  value ="Report">
+  </form>
+  <div id="success_dialog" style="display:none"></div>
+  </div>
+
+
+  <div id="dialog" style="display:none">
+   <!--[if !IE]>
+     <object data="" type="application/pdf">
+      <![endif]--> 
+      <span></span>
+   <!--[if !IE]> 
+    </object>
+    <![endif]-->
+   </div> 
+</div>
+  
+{% block content %}{% endblock %}
+
+<div class="row footer">
+<div class="six columns"> 
+ <ul class="icon_nav">
+ <li><a href="/index.html"><span><img src="{% static "images/icons/home_icon.png" %}" width="170" height="200"><p><strong>Home</strong><span></span></p></span></a></li>
+        <li><a href="/all_committees"><span><img src="{% static "images/icons/icon_all_committeesx.png" %}" width="170" height="200"><p><strong>All Committees</strong><span></span></p></span></a></li>
+		  <li><a href="/candidates"><span><img src="{% static "images/icons/icon_candidatex.png" %}" width="170" height="200"><p><strong>Candidates</strong><span></span></p></span></a></li>
+		  <li><a href="/corporate_labor"><span><img src="{% static "images/icons/icon_corp_laborx.png" %}" width="170" height="200"><p><strong>Corporate/ Labor</strong><span></span></p></span></a></li>
+		  	
+          <li><a href="/nonconnected"><span><img src="{% static "images/icons/icon_nonconx.png" %}" width="170" height="200"><p><strong>Nonconnected</strong><span></span></p></span></a></li>        
+		  <li><a href="/party"><span><img src="{% static "images/icons/icon_partyx.png" %}" width="170" height="200"><p><strong>Party</strong><span></span></p></span></a></li> 
+		  <li><a href="/reporting"><span><img src="{% static "images/icons/icon_reportingx.png" %}" width="170" height="200"><p><strong>Reporting</strong><span></span></p></span></a></li>
+		  <li><a href="/agency_guidelines"><span><img src="{% static "images/icons/icon_publicx.png" %}" width="170" height="200"><p><strong>Agency Guidelines</strong><span></span></p></span></a></li>
+		  <li><a href="/scripted_responses"><span><img src="{% static "images/icons/icon_scripted_respA.png" %}" width="170" height="200"><p><strong>Scripted Responses</strong><span></span></p></span></a></li>
+  </ul>
+   </div>
+   <div class="six columns footer_second_col">
+      <ul>
+         <li><a href="/agency_guidelines/referrallist.htm">Referral List</a></li>
+        <li><a href="http://fecnet.fec.gov/">FECnet</a></li>
+        <li><a href="http://www.fec.gov/">FEC Home Page</a></li>
+        <li><a class="report" href="">Report an Issue</a></li>
+	  	<li><a class="email_this" href="">Share with FEC staff</a></li>
+     </ul>   
+   </div>
+           
+  <img class="footer_icon" src="{% static "images/footer_icon.png" %}" width="30">  
+</div><!-- end row footer -->
+</div><!-- end container -->
+
+        {# Global javascript #}
+
+        <script  src="{% static 'js/respond.js' %}"></script>
+        <script  src="{% static 'js/infoweb_utils.js' %}"></script>
+        <script  src="{% static 'js/animatescroll.js' %}"></script>
+        <script  src="{% static 'js/jquery.placeholder.min.js' %}"></script>
+        <script  src="{% static 'js/jquery-ui.min.js' %}"></script>
+
+       {% block extra_js %}
+         {# Override this in templates to add extra javascript #}  
+         {% for block in self.script %}
+          {% if block.block_type == 'add_script' %}
+            {{ block.value }}
+          {% endif %}
+        {% endfor %}   
+       {% endblock %}
+    </body>
+</html>

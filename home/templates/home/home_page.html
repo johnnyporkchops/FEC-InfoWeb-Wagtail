@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="twelve columns">
+		<ul class="icon_nav">                        
+        <li><a href="/all_committees"><span><img src="{% static "images/icons/icon_all_committeesx.png" %}" width="170" height="200"><p><strong>All Committees</strong><span>Topics that relate to all types of political committees and other entities conducting activities regulated by the FEC. </span></p></span></a></li>
+		  <li><a href="/candidates"><span><img src="{% static "images/icons/icon_candidatex.png" %}" width="170" height="200"><p><strong>Candidates</strong><span> Topics that relate solely to federal candidates and their campaigns.</span></p></span></a></li>
+		  <li><a href="/corporate_labor"><span><img src="{% static "images/icons/icon_corp_laborx.png" %}" width="170" height="200"><p><strong>Corporate/Labor</strong><span>Topics that relate solely to corporations, labor organizations, trade associations, membership organizations and their PACs (referred to as separate segregated funds or SSFs).</span></p></span></a></li>
+		  	
+          <li><a href="/nonconnected"><span><img src="{% static "images/icons/icon_nonconx.png" %}" width="170" height="200"><p><strong>Nonconnected</strong><span> Topics that relate solely to nonconnected PACs, including  Hybrid PACs, Leadership PACs and Super PACs. </span></p></span></a></li>        
+		  <li><a href="/party"><span><img src="{% static "images/icons/icon_partyx.png" %}" width="170" height="200"><p><strong>Party</strong><span>Topics that relate solely to party committees, including national party committees, state party committees and local party committees/organizations. </span></p></span></a></li>
+		  <li><a href="/reporting"><span><img src="{% static "images/icons/icon_reportingx.png" %}" width="170" height="200"><p><strong>Reporting</strong><span>Topics that relate solely to filing and reporting, arranged by  transaction type or filer type.</span></p></span></a></li>
+		  <li><a href="/agency_guidelines"><span><img src="{% static "images/icons/icon_publicx.png" %}" width="170" height="200"><p><strong>Agency Guidelines</strong><span>Reference materials prepared for internal (and sometimes external) use, explanations of agency procedures and lists of agency personnel who can assist on particular topics.</span></p></span></a></li>
+		  <li><a href="/scripted_responses"><span><img src="{% static "images/icons/icon_scripted_respA.png" %}" width="170" height="200"><p><strong>Scripted Responses</strong><span>Scripted Responses provide step-by-step instructions for answering specific questions about agency guidelines.</span></p></span></a></li>
+		
+	  		</ul>
+		</div>	
+	</div>
+<div class="row">
+  <div class="twelve columns home_footer">
+      <ul>
+         <li><a href="/agency_guidelines/referrallist.htm">Referral List</a>
+        <li><a href="http://fecnet.fec.gov/">FECnet</a></li>
+        <li><a href="http://www.fec.gov/">FEC Home Page</a></li>
+        <li><a class="report" href="">Report an Issue</a></li>
+	  	<li><a class="email_this" href="">Share with FEC staff</a></li>
+     </ul>   
+   </div>
+ </div>
+<script>
+$(function(){
+	$(".icon_nav li").addClass('animated fadeInDown');
+	$('.icon_nav li').hover(function(){
+	  if ($(this).find('p span').css("display") == "block" )
+	{	
+	$(this).find('p').animate({
+    top: "-=75%",
+  }, 500, function() {
+	 $(this).find('strong').addClass('str_hvr');
+    });
+	$(this).find('img').animate({
+    opacity: "-=.8",
+  }, 500, function() {
+    });
+	}//end if
+	},
+	function(){
+	  if ($(this).find('p span').css("display") == "block" )
+	 {	
+	$(this).find('p').animate({
+    top: "+=75%",
+  }, 500, function() {
+	  $(this).find('strong').removeClass('str_hvr');
+    });
+  $(this).find('img').animate({
+    opacity: "+=.8",
+  }, 500, function() {
+    });
+	}
+	}//end if
+	);
+//remove footrt for now(better soluton to come-jc)
+$('.footer').css('display','none')
+});
+
+</script>
+{% endblock %}

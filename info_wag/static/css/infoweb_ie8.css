@@ -1,0 +1,183 @@
+h1{
+ font-size: 2em
+}
+h4{
+ font-size: 1.2em
+}
+.banner h4{
+ font-size:1.2em;
+}
+.banner h4 span{
+ font-size:1em;
+ padding-left:1em;
+
+}
+.banner h4 span:before{
+  content: "";
+  font-size: 1em;
+  padding-right:0em;
+  color: #333;
+  font-style: normal;
+ 
+  margin-right:1em
+ 
+}
+.footer{
+  background:#069;
+  height:250px;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+}
+
+
+ul, 
+ol,
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5em 0 1.5em 3em;
+ 
+}
+
+.fixed{
+margin-left:0px;
+} 
+
+h2.main_category{
+  padding:21px 0 21px 85px;
+  font-size:2.5em
+}
+h2.candidate{
+	background:#256DB5 url(/images/icons/icon_candidate_h2x.png) no-repeat scroll -2px -1px;
+}
+
+h2.corporate_labor{
+	background:#256DB5 url(/images/icons/icon_corp_labor_h2x.png) no-repeat scroll -2px -1px;
+}
+
+h2.all_committees{
+	background:#256DB5 url(/images/icons/icon_all_committees_h2x.png) no-repeat scroll -2px -1px;
+}
+
+h2.nonconnected{
+	background:#256DB5 url(/images/icons/icon_noncon_h2x.png) no-repeat scroll -2px -1px;
+}
+
+h2.faq{
+	background:#256DB5 url(/images/icons/faq_h2x.png) no-repeat scroll -2px -1px;
+}
+
+/*-----icon nav-----*/
+ul.icon_nav {
+margin:0;	
+}
+
+
+.icon_nav li {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); 
+  }
+  
+.icon_nav li:hover img{
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); 
+ 
+}
+@media (min-width: 400px) {
+.icon_nav li span p{ 
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#A6000000,endColorstr=#A6000000);
+}
+.icon_nav li:hover span p strong:after{
+	content:"\25b6"
+	
+}
+
+}
+
+/*@media (min-width: 750px) {
+	.icon_nav li {
+  margin:.1%;
+	}*/
+
+
+/*-----end icon-----*/
+
+/*---navbar styles-----*/
+
+#nav{
+
+}
+ul.nav-bar {
+padding:2% 0 0 5%;
+}
+/*ul.nav-bar li {
+ *display:inline;
+ zoom:1;
+ margin-bottom:0;
+ float:left;
+}*/
+
+ul.nav-bar li a{
+background:#069;
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#A6ffffff,endColorstr=#A6ffffff);
+}
+
+.nav-bar li a.active {
+background-color:#fff;
+color:#036;	
+/*box-shadow:2px 2px 3px 1px #666 inset; */
+}
+.fixed{
+
+margin-left:0px;
+
+}
+h5 {
+    font-size: 1.5em;
+}
+
+ul.breadcrumbs {
+	margin-left:0
+}
+/*ul.breadcrumbs li {
+
+*display:inline;
+ zoom:1;
+}*/
+
+
+
+/*expandable content styles */
+h2.expand{
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+ h2.expand2{
+  border-top:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-right:1px solid #ccc;
+  border-bottom:none;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */  
+}
+
+.expand + div, .expand2 + div{
+  width:80%;
+  border-top:none;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  margin:0px auto 0 auto;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */  
+}
+ h2.expand .rot,  h2.expand2 .rot {
+    margin: 0px;
+    right: 0;
+    top: 2px;
+}
+
+
+/* END expandable content styles */
+
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block body_class %}template-section{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="nine columns panel">
+        {% for block in self.category %}
+          {% if block.block_type == 'cat_title_class' %}
+              <h2 class="main_category {{ block.value }} ">
+          {% endif %}
+          {% if block.block_type == 'cat_title' %}
+              {{ block.value }}</h2>
+          {% endif %}
+        {% endfor %}
+        {{ self.date }}
+        {% for block in self.body %}
+          {% if block.block_type == 'panel' %}
+            {{ block.value }}
+          {% endif %}
+        {% endfor %}
+    </div>
+    <div class="three columns">
+      <div class="recent">
+        <h5>Recently Added:</h5>		
+        <p>A running chronological list of recently added items</p>
+         <ul>
+          {{ self.recently|richtext }}
+         </ul>
+      </div>
+    </div>
+  </div> 
+{% endblock %}
