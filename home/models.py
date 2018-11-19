@@ -16,11 +16,11 @@ from wagtail.wagtailsearch import index
 
 class InfowebBodyBlock(StreamBlock):
     panel = blocks.RawHTMLBlock()
-    
-   
+
+
 class InfowebScriptBlock(StreamBlock):
     add_script = blocks.RawHTMLBlock()
-   
+
 
 class HomePage(Page):
     pass
@@ -33,7 +33,7 @@ class SectionPage(Page):
     category = StreamField([
         ('cat_title_class', blocks.CharBlock(classname="full")),
         ('cat_title', blocks.CharBlock(classname="full"))
-        
+
     ])
     body = StreamField(InfowebBodyBlock())
     script = StreamField(InfowebScriptBlock())
@@ -46,15 +46,15 @@ class SectionPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    
-       
+
+
 
     # Search index configuraiton
 
-    search_fields = Page.search_fields + (
+    search_fields = Page.search_fields + [
         index.SearchField('body'),
         index.FilterField('date'),
-    )
+    ]
 
 
     # Editor panels configuration
@@ -75,7 +75,7 @@ class SectionPage(Page):
 
     # Parent page / subpage type rules
     subpage_types = ['NavPage']
-    
+
 
 
 
@@ -86,7 +86,7 @@ class NavPage(Page):
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RawHTMLBlock())
-        
+
     ])
     date = models.DateField("Post date")
     feed_image = models.ForeignKey(
@@ -112,7 +112,7 @@ class NavPage(Page):
         FieldPanel('nav_title'),
         FieldPanel('date'),
         StreamFieldPanel('body'),
-       
+
     ]
 
     promote_panels = [
@@ -124,7 +124,7 @@ class NavPage(Page):
      # Parent page / subpage type rules
 
     parent_page_types = ['SectionPage']
-   
+
 
 class GenericPage(Page):
 
@@ -132,7 +132,7 @@ class GenericPage(Page):
     category = StreamField([
         ('cat_title_class', blocks.CharBlock(classname="full")),
         ('cat_title', blocks.CharBlock(classname="full"))
-        
+
     ])
     body = StreamField(InfowebBodyBlock())
     script = StreamField(InfowebScriptBlock())
@@ -144,8 +144,8 @@ class GenericPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    
-       
+
+
 
     # Search index configuraiton
 
@@ -162,7 +162,7 @@ class GenericPage(Page):
         StreamFieldPanel('body'),
         FieldPanel('date'),
         StreamFieldPanel('script'),
-        
+
     ]
 
     promote_panels = [
@@ -185,24 +185,24 @@ class AgendaPage(Page):
                     ('doc_link', blocks.TextBlock())
                 ]))
             ])))
-        
+
         ]
         #,
         #template='blocks/agenda_temp.html',
         ))
     ])
-       
-    
+
+
 
 
     content_panels = Page.content_panels + [
         FieldPanel('author'),
         FieldPanel('date'),
         StreamFieldPanel('agenda'),
-        
+
     ]
 
-   
-        
 
-   
+
+
+
