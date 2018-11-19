@@ -51,10 +51,10 @@ class SectionPage(Page):
 
     # Search index configuraiton
 
-    search_fields = Page.search_fields + [
+    search_fields = Page.search_fields + (
         index.SearchField('body'),
         index.FilterField('date'),
-    ]
+    )
 
 
     # Editor panels configuration
